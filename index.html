@@ -12,49 +12,11 @@
 </head>
 
 <body>
-  <script>
-    // Initialize Parse
-    Parse.initialize("l0vgGksMszlnknDicMKxnzXNg92eQntmLkNGzk7d", "pFlbToWsOCdZF4gZpt6FRkFrkrMblLoj9uNrn98z");
-
-        window.fbAsyncInit = function() {
-      Parse.FacebookUtils.init({ // this line replaces FB.init({
-        appId      : '{1669733296572204}', // Facebook App ID
-        status     : true,  // check Facebook Login status
-        cookie     : true,  // enable cookies to allow Parse to access the session
-        xfbml      : true,  // initialize Facebook social plugins on the page
-        version    : 'v2.3' // point to the latest Facebook Graph API version
-      });
-
-          // Run code after the Facebook SDK is loaded.
-          Parse.FacebookUtils.logIn(null, {
-  success: function(user) {
-    if (!user.existed()) {
-      alert("User signed up and logged in through Facebook!");
-    } else {
-      alert("User logged in through Facebook!");
-    }
-  },
-  error: function(user, error) {
-    alert("User cancelled the Facebook login or did not fully authorize.");
-  }
-});
-    };
-
-        (function(d, s, id){
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {return;}
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
 
   <div id="main">
     <h1>You're ready to use Parse!</h1>
 
     <p>Read the documentation and start building your JavaScript app:</p>
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
 
     <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="true" data-auto-logout-link="false"></div>
 
@@ -79,7 +41,44 @@
   </div>
 
 
+  <script>
+    // Initialize Parse
+    Parse.initialize("l0vgGksMszlnknDicMKxnzXNg92eQntmLkNGzk7d", "pFlbToWsOCdZF4gZpt6FRkFrkrMblLoj9uNrn98z");
 
+        window.fbAsyncInit = function() {
+      Parse.FacebookUtils.init({ // this line replaces FB.init({
+        appId      : '{1669733296572204}', // Facebook App ID
+        status     : true,  // check Facebook Login status
+        cookie     : true,  // enable cookies to allow Parse to access the session
+        xfbml      : true,  // initialize Facebook social plugins on the page
+        version    : 'v2.3' // point to the latest Facebook Graph API version
+      });
+
+          // Run code after the Facebook SDK is loaded.
+
+    };
+
+        (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    Parse.FacebookUtils.logIn(null, {
+  success: function(user) {
+    if (!user.existed()) {
+      alert("User signed up and logged in through Facebook!");
+    } else {
+      alert("User logged in through Facebook!");
+    }
+  },
+  error: function(user, error) {
+    alert("User cancelled the Facebook login or did not fully authorize.");
+  }
+});
+  </script>
 </body>
 
 </html>
