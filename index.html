@@ -56,9 +56,7 @@
 
 
           // Run code after the Facebook SDK is loaded.
-
-    };
-    Parse.FacebookUtils.logIn(null, {
+      Parse.FacebookUtils.logIn(null, {
   success: function(user) {
     if (!user.existed()) {
       alert("User signed up and logged in through Facebook!");
@@ -70,6 +68,8 @@
     alert("User cancelled the Facebook login or did not fully authorize.");
   }
 });
+};
+
 
         (function(d, s, id){
       var js, fjs = d.getElementsByTagName(s)[0];
