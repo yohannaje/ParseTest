@@ -13,6 +13,7 @@
 
 <body>
   <script>
+  Parse.initialize("l0vgGksMszlnknDicMKxnzXNg92eQntmLkNGzk7d", "pFlbToWsOCdZF4gZpt6FRkFrkrMblLoj9uNrn98z");
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
       console.log('statusChangeCallback');
@@ -46,7 +47,7 @@
     }
 
     window.fbAsyncInit = function() {
-    FB.init({
+    Parse.FacebookUtils.init({
       appId      : '1669733296572204',
       cookie     : true,  // enable cookies to allow the server to access
                           // the session
